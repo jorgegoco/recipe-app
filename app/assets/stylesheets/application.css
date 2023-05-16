@@ -157,6 +157,11 @@ h1 {
   width: 90%;
 }
 
+.backtofoods {
+  margin-top: 50px;
+  text-align: center;
+}
+
 .addrecipe {
   text-align: center;
   margin-top: 40px;
