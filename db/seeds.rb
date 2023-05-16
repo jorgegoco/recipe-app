@@ -1,11 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
-
 RecipeFood.destroy_all
 Food.destroy_all
 Recipe.destroy_all
@@ -13,46 +5,44 @@ User.destroy_all
 
 # Creating 2 users
 jorge = User.create(name: 'jorge', email: 'jorge@gmail.com', password: '123123')
-fuad = User.create(name: 'fuad', email: 'fuad@gmail.com', password: '456456')
+titina = User.create(name: 'titina', email: 'titina@gmail.com', password: '456456')
 
-# Creating 4 foods for jorge
-olive_oil = Food.create(name: 'Olive Oil', measurement_unit: 'l', price: '200$', quantity: 5, user: jorge)
-tomatoes = Food.create(name: 'Tomatoes', measurement_unit: 'Kg', price: '30$', quantity: 4, user: jorge)
-chicken_breast = Food.create(name: 'Chicken Breast', measurement_unit: 'Kg', price: '49.99$', quantity: 3, user: jorge)
-onion = Food.create(name: 'Onion', measurement_unit: 'Kg', price: '5.78$', quantity: 2, user: jorge)
+# Creating foods for jorge
+egg = Food.create(name: 'Egg', measurement_unit: 'unit', price: '2$', quantity: 10, user: jorge)
+butter = Food.create(name: 'Butter', measurement_unit: '250g', price: '4$', quantity: 2, user: jorge)
+cheddar_cheese = Food.create(name: 'Cheddar Cheese', measurement_unit: '125g', price: '1.25$', quantity: 2, user: jorge)
+cherry_tomatoes = Food.create(name: 'Cherry Tomatoes', measurement_unit: 'Kg', price: '30$', quantity: 0.3, user: jorge)
 
-# Creating 4 foods for fuad
-sugar = Food.create(name: 'Sugar', measurement_unit: 'g', price: '3.65$', quantity: 300, user: fuad)
-mayonnaise = Food.create(name: 'Mayonnaise', measurement_unit: 'l', price: '10.99$', quantity: 2, user: fuad)
-rice = Food.create(name: 'Rice', measurement_unit: 'Kg', price: '22.49$', quantity: 5, user: fuad)
-sauce = Food.create(name: 'Sauce', measurement_unit: 'l', price: '2.19$', quantity: 1, user: fuad)
+# Creating foods for titina
+apple = Food.create(name: 'Apple', measurement_unit: 'unit', price: '0.3$', quantity: 6, user: titina)
+sugar = Food.create(name: 'Sugar', measurement_unit: 'Kg', price: '2$', quantity: 2, user: titina)
+cinnamon = Food.create(name: 'Cinnamon', measurement_unit: 'g', price: '0.1$', quantity: 50, user: titina)
+rolled_oats = Food.create(name: 'Rolled Oats', measurement_unit: 'g', price: '0.5$', quantity: 200, user: titina)
+butter_titina = Food.create(name: 'Butter', measurement_unit: '250g', price: '4$', quantity: 1, user: titina)
 
+# Creating recipes for jorge
 
-# Creating 2 recipes
-description_of_grilled_chicken = " Wash hands with soap and water.
-After washing basil and tomatoes, blot them dry with clean paper towel.
-Using a clean cutting board, cut tomatoes into quarters.
-For marinade, place first six ingredients in a blender. Cover and process until well blended.
-Place chicken breasts in a shallow dish; orange quote icon do not rinse raw poultry. Cover with marinade. Cover dish. Refrigerate about 1 hour, turning occasionally. orange quote icon Wash dish after touching raw poultry.
-orange quote icon Wash hands with soap and water after handling uncooked chicken.
-Place chicken on an oiled grill rack over medium heat. orange quote icon Do not reuse marinades used on raw foods. Grill chicken 4-6 minutes per side. orange quote icon Cook until internal temperature reaches 165 °F as measured with a food thermometer."
+cheese_tomato_omelette_description = "To make this cheese and tomato omelet, you need to beat four eggs in a small bowl and season with salt and pepper. Heat some butter in a large nonstick skillet over medium-high heat and pour in the egg mixture. Cook for about 5 minutes, lifting the edges with a spatula to let the uncooked egg flow underneath. Sprinkle some shredded cheddar cheese and chopped cherry tomatoes over half of the omelet. Fold the other half over the filling and cook for another 5 minutes or until the cheese is melted. Cut into wedges and serve hot or cold."
+cheese_tomato_omelette = Recipe.create(name: 'Cheese and Tomato Omelet', preparation_time: '5 min', cooking_time: '10 min', description: cheese_tomato_omelette_description, public: true, user: jorge)
 
-grilled_basil_chicken_by_wassim = Recipe.create(name: 'Grilled Basil Chicken', preparation_time: '10 min', cooking_time: '45 min', description: description_of_grilled_chicken, public: true, user: jorge)
+# Creating recipes for titina
 
-description_of_miso_marinated_short_ribs = "Wash hands with soap and water. In small bowl, stir together miso, mayonnaise, and 2 tbsp vinegar. Place ribs on a rimmed baking sheet and season lightly with salt; orange quote icon do not rinse raw meat. Pour all but 2 tablespoons miso mixture over ribs; turn to coat. Set remaining miso mixture aside.
-Thinly slice radishes and toss in a medium bowl with remaining 1 tbsp vinegar. Season with salt and toss again.
-Heat a large heavy skillet, preferably cast iron, over medium-high. When pan is hot, add 2 tsp. oil and swirl to coat. Remove ribs from marinade;  orange quote icon do not reuse marinade used on raw meat.
-Wash hands with soap and water after handling uncooked meat. Add half of ribs to pan and cook without turning until underside is very dark brown and charred in spots, about 2 minutes."
+apple_crisp_description = "To make this apple crisp, you need to preheat the oven to 180°C and grease a baking dish. Peel and slice four apples and arrange them in an even layer on the bottom of the dish. Sprinkle some brown sugar and cinnamon over the apples. In a small bowl, mix some rolled oats and melted butter with your fingers until crumbly. Sprinkle the oat mixture over the apple layer. Bake for 30 minutes or until golden and bubbly. Serve hot or cold with whipped cream or ice cream if desired."
 
-miso_marinated_short_ribs_by_fuad = Recipe.create(name: 'Miso Marinated Short Ribs', preparation_time: '25 min', cooking_time: '20 min', description: description_of_miso_marinated_short_ribs, public: false, user: fuad)
+apple_crisp = Recipe.create(name: 'Apple Crisp', preparation_time: '10 min', cooking_time: '30 min', description: apple_crisp_description, public: true, user: titina)
 
 # Creating Recipe Foods
-# Grilled basil chicken has 3 foods
-grilled_basil_chicken_food1 = RecipeFood.create(quantity: 2, recipe: grilled_basil_chicken_by_wassim, food: olive_oil)
-grilled_basil_chicken_food2 = RecipeFood.create(quantity: 5, recipe: grilled_basil_chicken_by_wassim, food: chicken_breast)
-grilled_basil_chicken_food3 = RecipeFood.create(quantity: 1, recipe: grilled_basil_chicken_by_wassim, food: onion)
+# cheese_tomato_omelette has 4 foods
 
-# Miso_marinated_short_ribs has 2 foods
-miso_marinated_short_ribs_food1 = RecipeFood.create(quantity: 4, recipe: miso_marinated_short_ribs_by_fuad, food: rice)
-miso_marinated_short_ribs_food2 = RecipeFood.create(quantity: 1, recipe: miso_marinated_short_ribs_by_fuad, food: sauce)
+RecipeFood.create(quantity: 4, recipe: cheese_tomato_omelette, food: egg)
+RecipeFood.create(quantity: 0.05, recipe: cheese_tomato_omelette, food: butter)
+RecipeFood.create(quantity: 0.2, recipe: cheese_tomato_omelette, food: cheddar_cheese)
+RecipeFood.create(quantity: 0.1, recipe: cheese_tomato_omelette, food: cherry_tomatoes)
 
+# apple_crisp has 5 foods
+
+RecipeFood.create(quantity: 4, recipe: apple_crisp, food: apple)
+RecipeFood.create(quantity: 0.05, recipe: apple_crisp, food: sugar)
+RecipeFood.create(quantity: 5, recipe: apple_crisp, food: cinnamon)
+RecipeFood.create(quantity: 100, recipe: apple_crisp, food: rolled_oats)
+RecipeFood.create(quantity: 0.2, recipe: apple_crisp, food: butter_titina)
