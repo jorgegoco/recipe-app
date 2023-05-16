@@ -157,7 +157,7 @@ h1 {
   width: 90%;
 }
 
-.backtofoods {
+.backto {
   margin-top: 50px;
   text-align: center;
 }
@@ -167,7 +167,7 @@ h1 {
   margin-top: 40px;
 }
 
-.recipes {
+.recipe-each {
   width: 80%;
   margin: auto;
   margin-top: 50px;
@@ -175,9 +175,6 @@ h1 {
   box-shadow: 5px 10px;
   text-align: center;
   padding: 20px;
-}
-
-.recipe-each {
   display: grid;
   grid-template-columns: 1fr 2fr;
 }
