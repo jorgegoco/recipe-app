@@ -168,7 +168,7 @@ h1 {
 }
 
 .recipe-each {
-  width: 80%;
+  width: 70%;
   margin: auto;
   margin-top: 50px;
   border: 1px solid;
@@ -177,6 +177,21 @@ h1 {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+
+.public-recipe-each{
+  grid-template-columns: 1fr 1fr;
+}
+
+.public-recipe-data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;   
+  align-items: center;
+}
+
+.bold {
+  font-weight:900;
 }
 
 .recipe-header {

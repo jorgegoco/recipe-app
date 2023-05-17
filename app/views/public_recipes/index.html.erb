@@ -2,21 +2,15 @@
 <h1>Public Recipes</h1>
 <div>
   <% @public_recipes.each do |recipe|%>
-    <div class="recipe-each">
+    <div class="recipe-each public-recipe-each">
       <div class="recipe-header">
-      <h1>
-        <%= link_to recipe.name, public_recipe_path(recipe), class: "recipe" %>
-      </h1>
-      <h5>By: <%= recipe.user.name %>
-      </h5>
+        <h1><%= link_to recipe.name, public_recipe_path(recipe), class: "recipe" %></h1>
+        <h5>By: <%= recipe.user.name %></h5>
       </div>
-      <div>
-      <p>Total food items: <%= recipe.recipe_foods.length %> 
-      </p>
-      <p>
-        Total price: $<%= recipe.total_price %>
-      </p>
+      <div class="public-recipe-data">
+        <p>Total food items: <span class="bold"><%= recipe.recipe_foods.length %></span></p>
+        <p>Total price: $<span class="bold"><%= recipe.total_price %></span></p>
       </div>
-    </div>
+    </div> 
   <%end%>
 </div>
