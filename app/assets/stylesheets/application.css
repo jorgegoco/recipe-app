@@ -179,19 +179,19 @@ h1 {
   grid-template-columns: 1fr 2fr;
 }
 
-.public-recipe-each{
+.public-recipe-each {
   grid-template-columns: 1fr 1fr;
 }
 
 .public-recipe-data {
   display: flex;
   flex-direction: column;
-  justify-content: center;   
+  justify-content: center;
   align-items: center;
 }
 
 .bold {
-  font-weight:900;
+  font-weight: 900;
 }
 
 .recipe-header {
@@ -203,14 +203,16 @@ h1 {
 .recipe {
   text-decoration: none;
   color: green;
-  padding: 5px;;
+  padding: 5px;
   transition: all 0.3s ease-in-out;
-  border: 1px solid transparent; 
+  border: 1px solid transparent;
 }
+
 .recipe:hover {
-  transform: scale(1.1); 
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 
-              -4px -4px 8px rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  box-shadow:
+    4px 4px 8px rgba(0, 0, 0, 0.5),
+    -4px -4px 8px rgba(255, 255, 255, 0.2);
   border-color: black;
 }
 
