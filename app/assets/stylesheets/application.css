@@ -188,6 +188,15 @@ h1 {
 .recipe {
   text-decoration: none;
   color: green;
+  padding: 5px;;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid transparent; 
+}
+.recipe:hover {
+  transform: scale(1.1); 
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5), 
+              -4px -4px 8px rgba(255, 255, 255, 0.2);
+  border-color: black;
 }
 
 .add-food-div {
