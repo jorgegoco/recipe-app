@@ -1,0 +1,30 @@
+<div class="home"><%= link_to "Home", "/", class: "home-inner" %></div>
+<div class="center-cont">
+  <h1>Recipe: <%= @public_recipe.name %></h1>
+  <h3>Cooking time: <%= @public_recipe.cooking_time %></h3>
+  <h3>Steps: <%= @public_recipe.description%></h3> 
+</div>
+<% if @public_recipe.recipe_foods.length != 0 %>
+  <div class="foods">
+    <table>
+      <tr>
+        <th>Food</th>
+        <th>Quantity</th>
+        <th>Value</th>
+      </tr>
+      <% @public_recipe.recipe_foods.each do |f| %>
+        <tr>
+          <td><%= f.food.name %></td>
+          <td><%= f.quantity %></td>
+          <td>
+            <% sum = f.quantity * f.food.price%>
+            <%= sum%>$
+          </td>
+        </tr>
+      <%end%>
+    </table>
+  </div>
+<% else %>
+  <p>No foods added to recipe yet.</p>
+<%end%>
+<div class="backto"><%= link_to "Back to Public Recipes", public_recipes_path, class: "hover home-inner" %></div>
