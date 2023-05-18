@@ -132,6 +132,11 @@ h1 {
   margin: 10px 0;
 }
 
+.both-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
 .field,
 .actions {
   margin-top: 20px;

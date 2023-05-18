@@ -1,29 +1,32 @@
-<div class="edit-food">
-  <h1>Edit <%= @food.name %></h1>
-  
+<div class="add-food">
   <%= form_for @food do |f| %>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
+
+    <h1>Edit <%= @food.name %></h1>
+    <div>
+      <div class="add-food-div">
+        <%= f.label :name %><br/>
+        <%= f.text_field :name %>
+      </div>
   
-    <div class="field">
-      <%= f.label :measurement_unit %>
-      <%= f.text_field :measurement_unit %>
-    </div>
+      <div class="add-food-div">
+        <%= f.label :measurement_unit %><br/>
+        <%= f.text_field :measurement_unit %>
+      </div>
     
-    <div class="field">
-      <%= f.label :price %>
-      <%= f.text_field :price %>
+      <div class="add-food-div">
+        <%= f.label :price %><br/>
+        <%= f.text_field :price %>
+      </div>
+  
+      <div class="add-food-div">
+        <%= f.label :quantity %><br/>
+        <%= f.number_field :quantity %>
+      </div>
     </div>
   
-    <div class="field">
-      <%= f.label :quantity %>
-      <%= f.number_field :quantity %>
-    </div>
-  
-    <div class="actions">
-      <%= f.submit "Update", class: "button" %>
+    <div>
+      <%= f.submit "Update", class: "hover home-inner" %>
     </div>
   <% end %>
 </div>
+<div class="backto"><%= link_to "Back to Foods", foods_path, class: "hover home-inner" %></div>
