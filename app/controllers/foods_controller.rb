@@ -3,6 +3,19 @@ class FoodsController < ApplicationController
     @foods = Food.where(user: current_user) || []
   end
 
+  def edit
+    @food = Food.find(params[:id])
+  end
+
+  def update
+    @food = Food.find(params[:id])
+    if @food.update(food_params)
+      redirect_to foods_path
+    else
+      render :edit
+    end
+  end
+
   def new
     @food = Food.new
     render 'new'

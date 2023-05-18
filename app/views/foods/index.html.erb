@@ -14,9 +14,12 @@
     <tr>
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
+      <td><%= number_to_currency(food.price) %></td>
       <td><%= food.quantity %></td>
-      <td><%= button_to "Delete", food, method: :delete, class: "hover home-inner"%></td>
+      <td>
+          <%= button_to "Delete", food, method: :delete, class: "hover home-inner" %>
+          <%= link_to "Edit", edit_food_path(food), class: "hover home-inner" %>
+        </td>
     </tr>
   <% end %>
   </table>

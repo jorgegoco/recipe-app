@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'home#index'
   
   resources :users
-  resources :foods, except: :update
+  resources :foods
   resources :recipes do
     resources :recipe_foods, only: [:new, :create, :destroy]
   end
