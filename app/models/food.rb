@@ -3,5 +3,6 @@ class Food < ApplicationRecord
   has_many :recipe_foods, dependent: :destroy
   has_many :recipes, through: :recipe_foods
 
-  validates :name, :measurement_unit, :price, presence: true
+  validates :name, :measurement_unit, :price, :quantity, presence: true
+  validates :quantity, :price, numericality: { greater_than: 0 }
 end

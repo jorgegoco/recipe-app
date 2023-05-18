@@ -116,6 +116,22 @@ h1 {
   padding: 20px;
 }
 
+.add-ingredient {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+  border: 1px solid;
+  box-shadow: 5px 10px;
+  text-align: center;
+  padding: 20px;
+}
+
+.add-ingredient-div {
+  margin: 10px 0;
+}
+
 .field,
 .actions {
   margin-top: 20px;
@@ -223,10 +239,6 @@ h1 {
 .list-add {
   display: flex;
   justify-content: space-evenly;
-}
-
-.divs {
-  margin: 10px 0;
 }
 
 .center-cont {
