@@ -22,8 +22,14 @@ class FoodsController < ApplicationController
   end
 
   def create
-    @food = Food.new(food_params)
-    @food.user = current_user
+    existing_food = Food.find_by(user: current_user, name: params[:food][:name], measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
+    if existing_food
+      existing_food.quantity += params[:food][:quantity].to_f
+      @food = existing_food
+    else
+      @food = Food.new(food_params)
+      @food.user = current_user
+    end
     if @food.save
       redirect_to foods_path
     else
