@@ -14,9 +14,14 @@
     <tr>
       <td><%= food.name %></td>
       <td><%= food.measurement_unit %></td>
-      <td><%= food.price %></td>
+      <td><%= number_to_currency(food.price) %></td>
       <td><%= food.quantity %></td>
-      <td><%= button_to "Delete", food, method: :delete, class: "hover home-inner"%></td>
+      <td>
+        <div class="both-buttons">
+          <%= button_to 'Edit', edit_food_path(food), class: 'hover home-inner', method: :get %>
+          <%= button_to 'Delete', food_path(food), class: 'hover home-inner', method: :delete, data: { confirm: 'Are you sure?' } %>
+        </div>
+      </td>
     </tr>
   <% end %>
   </table>

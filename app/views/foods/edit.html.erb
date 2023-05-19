@@ -1,31 +1,31 @@
 <div class="add-food">
   <%= form_for @food do |f| %>
 
-    <h1>Add Food</h1>
+    <h1>Edit <%= @food.name %></h1>
     <div>
       <div class="add-food-div">
         <%= f.label :name %><br/>
-        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+        <%= f.text_field :name %>
       </div>
-
+  
       <div class="add-food-div">
         <%= f.label :measurement_unit %><br/>
-        <%= f.text_field :measurement_unit, autocomplete: "measurement_unit" %>
+        <%= f.text_field :measurement_unit %>
       </div>
-
+    
       <div class="add-food-div">
-        <%= f.label :price %><br />
-        <%= f.text_field :price, autocomplete: "price", type: "number" %>
+        <%= f.label :price %><br/>
+        <%= f.text_field :price %>
       </div>
-
+  
       <div class="add-food-div">
-        <%= f.label :quantity %><br />
-        <%= f.text_field :quantity, autocomplete: "quantity", type: "number" %>
+        <%= f.label :quantity %><br/>
+        <%= f.number_field :quantity %>
       </div>
     </div>
-
+  
     <div>
-      <%= f.submit "Add", class: "hover home-inner"%>
+      <%= f.submit "Update", class: "hover home-inner" %>
     </div>
   <% end %>
 </div>

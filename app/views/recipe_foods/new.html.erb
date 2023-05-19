@@ -1,21 +1,22 @@
-<div class="home"><%= link_to "Home", "/", class: "home-inner" %></div>
-<div class="foods">
+<div class="home"><%= link_to "Home", "/", class: "hover home-inner" %></div>
+<div class="add-ingredient">
 <%= form_with model: @recipe_food, url: recipe_recipe_foods_path do |f| %>
-  <div class="divs">
-    <%= f.label :quantity %>
-    <%= f.number_field :quantity %>
+  <div class="add-ingredient-div">
+    <%= f.label :quantity %><br />
+    <%= f.text_field :quantity, autocomplete: "quantity", type: "number" %>
   </div>
 
-  <div class="divs">
-    <%= f.label :food_id %>
+  <div class="add-ingredient-div">
+    <%= f.label :food_id %><br />
     <%= f.select :food_id, @foods.map { |food| [food.name, food.id] } %>
   </div>
 
   <%= f.hidden_field :recipe_id, value: @recipe_id %>
-  <div class="divs">
+  <div class="add-ingredient-div">
     <%= f.submit "Add Ingredient" %>
   </div>
 <% end %>
+<div class="addfood"><%= link_to 'Create New Food', new_from_recipe_foods_path, class: "addfood-inner hover home-inner" %></div>
 <table>
   <tr>
     <th>ID</th>
@@ -35,3 +36,4 @@
   <% end %>
 </table>
 </div>
+<div class="backto"><%= link_to "Back to Recipe", recipe_path(params[:recipe_id]), class: "hover home-inner" %></div>
