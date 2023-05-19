@@ -3,7 +3,11 @@ Rails.application.routes.draw do
   root 'home#index'
   
   resources :users
-  resources :foods
+  resources :foods do
+    collection do
+      get 'new_from_recipe'
+    end
+  end
   resources :recipes do
     resources :recipe_foods, only: [:new, :create, :destroy]
   end
