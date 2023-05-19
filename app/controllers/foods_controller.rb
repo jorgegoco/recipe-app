@@ -22,7 +22,8 @@ class FoodsController < ApplicationController
   end
 
   def create
-    existing_food = Food.find_by(user: current_user, name: params[:food][:name], measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
+    existing_food = Food.find_by(user: current_user, name: params[:food][:name],
+                                 measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
     if existing_food
       existing_food.quantity += params[:food][:quantity].to_f
       @food = existing_food
@@ -47,9 +48,10 @@ class FoodsController < ApplicationController
     @food = Food.new
     render 'new_from_recipe'
   end
-  
+
   def create_from_recipe
-    existing_food = Food.find_by(user: current_user, name: params[:food][:name], measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
+    existing_food = Food.find_by(user: current_user, name: params[:food][:name],
+                                 measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
     if existing_food
       existing_food.quantity += 0
       @food = existing_food
