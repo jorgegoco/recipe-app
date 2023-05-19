@@ -51,14 +51,15 @@ class FoodsController < ApplicationController
   def create_from_recipe
     existing_food = Food.find_by(user: current_user, name: params[:food][:name], measurement_unit: params[:food][:measurement_unit], price: params[:food][:price])
     if existing_food
-      existing_food.quantity += params[:food][:quantity].to_f
+      existing_food.quantity += 0
       @food = existing_food
     else
-      @food = Food.new(food_params)
+      @food = Food.new(food_params.except(:quantity))
       @food.user = current_user
+      @food.quantity = 0
     end
     if @food.save
-      redirect_to new_recipe_food_path(recipe_id: params[:recipe_id])
+      redirect_to foods_path
     else
       render :new_from_recipe
     end

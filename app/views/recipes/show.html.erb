@@ -54,7 +54,7 @@
             <%= sum%>$
           </td>
           <% if can? :destroy, @recipe%>
-            <td><%= button_to "Remove", recipe_recipe_food_path(@recipe.id, f.id), method: :delete%></td>
+            <td><%= button_to "Remove", recipe_recipe_food_path(@recipe.id, f.id), class: 'hover home-inner', method: :delete%></td>
           <%end%>
         </tr>
       <%end%>

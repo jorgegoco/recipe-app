@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :foods do
     collection do
       get 'new_from_recipe'
+      post 'create_from_recipe'
     end
   end
   resources :recipes do
