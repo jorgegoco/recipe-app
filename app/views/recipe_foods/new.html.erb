@@ -16,7 +16,7 @@
     <%= f.submit "Add Ingredient" %>
   </div>
 <% end %>
-<div class="addfood"><%= link_to 'Create New Food', new_from_recipe_foods_path, class: "addfood-inner hover home-inner" %></div>
+<div class="addfood"><%= link_to 'Create New Food', new_from_recipe_foods_path(recipe_id: @recipe_id), class: "addfood-inner hover home-inner" %></div>
 <table>
   <tr>
     <th>ID</th>

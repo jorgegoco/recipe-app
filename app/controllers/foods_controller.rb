@@ -46,6 +46,7 @@ class FoodsController < ApplicationController
 
   def new_from_recipe
     @food = Food.new
+    @recipe_id = params[:recipe_id]
     render 'new_from_recipe'
   end
 
