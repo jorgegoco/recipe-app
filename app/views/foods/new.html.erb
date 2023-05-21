@@ -15,12 +15,12 @@
 
       <div class="add-food-div">
         <%= f.label :price %><br />
-        <%= f.text_field :price, autocomplete: "price", type: "number" %>
+        <%= f.text_field :price, autocomplete: "price", type: "number", step: "0.01" %>
       </div>
 
       <div class="add-food-div">
         <%= f.label :quantity %><br />
-        <%= f.text_field :quantity, autocomplete: "quantity", type: "number" %>
+        <%= f.text_field :quantity, autocomplete: "quantity", type: "number", step: "0.01" %>
       </div>
     </div>
 

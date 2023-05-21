@@ -286,3 +286,17 @@ th {
   align-items: center;
   gap: 5px;
 }
+
+.add-recipe-food {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 10px 0;
+}
+
+.description-field {
+  width: 90%;
+  height: 150px; /* Change the value to what suits your needs */
+}
