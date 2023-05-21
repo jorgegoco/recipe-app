@@ -3,7 +3,7 @@
 <%= form_with model: @recipe_food, url: recipe_recipe_foods_path do |f| %>
   <div class="add-ingredient-div">
     <%= f.label :quantity %><br />
-    <%= f.text_field :quantity, autocomplete: "quantity", type: "number" %>
+    <%= f.text_field :quantity, autocomplete: "quantity", type: "number", step: "0.01" %>
   </div>
 
   <div class="add-ingredient-div">
