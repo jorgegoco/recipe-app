@@ -1,17 +1,16 @@
 <div class="home"><%= link_to "Home", "/", class: "hover home-inner" %></div>
 <div class="foods">
-<h1>General shopping List</h1>
-<div>
-  <p>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></p>
-  <p>Total value of food needed: <strong>$<%= @total_price %></strong></p>
-</div>
-<table>
-  <thead>
-    <td><strong>Food</strong></td>
-    <td><strong>Quantity</strong></td>
-    <td><strong>Price</strong></td>
-  </thead>
-  <tbody>
+  <h1>Shopping List</h1>
+  <div class="shopping-list-paragraphs">
+    <p>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></p>
+    <p>Total value of food needed: <strong>$<%= @total_price %></strong></p>
+  </div>
+  <table>
+    <tr>
+      <th><strong>Food</strong></th>
+      <th><strong>Quantity</strong></th>
+      <th><strong>Price</strong></th>
+    </tr>
     <%  @recipe_foods.each do |food| %>
       <tr>
         <td><%= food.food.name %></td>
@@ -19,5 +18,6 @@
         <td>$<%= food.food.price*food.quantity %></td>
       </tr>
     <%end%>
-  </tbody>
-</table>
+  </table>
+</div>
+<div class="backto"><%= link_to "Back to Recipe", recipe_path(@recipe_id), class: "hover home-inner" %></div>

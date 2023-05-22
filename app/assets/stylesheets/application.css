@@ -298,5 +298,12 @@ th {
 
 .description-field {
   width: 90%;
-  height: 150px; /* Change the value to what suits your needs */
+  height: 150px; 
+}
+
+.shopping-list-paragraphs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 50px;
 }
