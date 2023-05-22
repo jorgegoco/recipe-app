@@ -2,7 +2,7 @@
 <div class="foods">
   <h1>Shopping List</h1>
   <div class="shopping-list-paragraphs">
-    <p>Amount of food items to buy: <strong><%= @recipe_foods.count %></strong></p>
+    <p>Amount of food items to buy: <strong><%= @list_of_foods.count %></strong></p>
     <p>Total value of food needed: <strong>$<%= @total_price %></strong></p>
   </div>
   <table>
@@ -11,10 +11,10 @@
       <th><strong>Quantity</strong></th>
       <th><strong>Price</strong></th>
     </tr>
-    <%  @recipe_foods.each do |food| %>
+    <%  @list_of_foods.each do |food| %>
       <tr>
         <td><%= food.food.name %></td>
-        <td><%= food.quantity %><%= food.food.measurement_unit %></td>
+        <td><%= "#{food.quantity}  x '#{food.food.measurement_unit}'" %></td>
         <td>$<%= food.food.price*food.quantity %></td>
       </tr>
     <%end%>

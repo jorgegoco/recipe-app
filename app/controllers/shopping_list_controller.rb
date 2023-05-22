@@ -35,7 +35,7 @@ class ShoppingListController < ApplicationController
     @recipe_id = params[:recipe_id]
     @food_amount = 0
     @total_price = 0
-    @recipe_foods = []
+    @list_of_foods = []
     @need_foods = RecipeFood.where(recipe_id: @recipe_id)
     @need_foods.each do |need_food|
       new_food_id = need_food.food_id
@@ -44,9 +44,9 @@ class ShoppingListController < ApplicationController
       next if quantity_needed >= 0
 
       need_food.quantity = quantity_needed * -1
-      @recipe_foods << need_food
+      @list_of_foods << need_food
     end
-    @recipe_foods.each do |f|
+    @list_of_foods.each do |f|
       @total_price += f.food.price * f.quantity
     end
   end
