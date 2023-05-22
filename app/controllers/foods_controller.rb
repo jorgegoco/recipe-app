@@ -31,6 +31,7 @@ class FoodsController < ApplicationController
       @food = Food.new(food_params)
       @food.user = current_user
     end
+    
     if @food.save
       redirect_to foods_path
     else
