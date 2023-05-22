@@ -11,7 +11,7 @@ class RecipeFoodsController < ApplicationController
       existing_recipe_food.quantity += params[:recipe_food][:quantity].to_f
       @recipe_food = existing_recipe_food
     else
-      @recipe_food = RecipeFood.new(params_recipe_foods)  
+      @recipe_food = RecipeFood.new(params_recipe_foods)
     end
 
     if @recipe_food.save
