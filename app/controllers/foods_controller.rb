@@ -31,6 +31,7 @@ class FoodsController < ApplicationController
       @food = Food.new(food_params)
       @food.user = current_user
     end
+
     if @food.save
       redirect_to foods_path
     else
@@ -61,11 +62,10 @@ class FoodsController < ApplicationController
       @food.user = current_user
       @food.quantity = 0
     end
-    if @food.save
-      redirect_to foods_path
-    else
-      render :new_from_recipe
-    end
+
+    return unless @food.save
+
+    redirect_to foods_path
   end
 
   private

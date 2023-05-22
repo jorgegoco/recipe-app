@@ -6,7 +6,13 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @recipe_food = RecipeFood.new(params_recipe_foods)
+    existing_recipe_food = RecipeFood.find_by(recipe_id: params[:recipe_id], food_id: params[:recipe_food][:food_id])
+    if existing_recipe_food
+      existing_recipe_food.quantity += params[:recipe_food][:quantity].to_f
+      @recipe_food = existing_recipe_food
+    else
+      @recipe_food = RecipeFood.new(params_recipe_foods)
+    end
 
     if @recipe_food.save
       redirect_to recipe_path(params[:recipe_id])
