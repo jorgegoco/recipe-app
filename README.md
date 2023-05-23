@@ -22,11 +22,10 @@
 - [❓ FAQ](#faq)
 - [📝 License](#license)
 
-<!-- PROJECT DESCRIPTION -->
 
 # 📖 Recipe App <a name="about-project"></a>
 
-> The Recipe app keeps track of all your recipes, ingredients, and inventory. It will allow you to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe. Also, since sharing recipes is an important part of cooking the app should allow you to make them public so anyone can access them.
+> Recipe App is a web app that helps you manage your food inventory, create and share recipes, and plan your shopping lists. You can keep your recipes private, or make them public to inspire other users. You can also add ingredients to your recipes, and generate shopping lists for any recipe or for all your recipes. Recipe App is the ultimate tool for cooking enthusiasts who want to save time and money.👩‍🍳
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -41,18 +40,23 @@
     <li><a href="https://ruby-doc.org/core-3.1.2/">Rails</a></li>
   </ul>
 </details>
+<details>
+  <summary>PostgreSQL </summary>
+  <ul>
+    <li><a href="https://www.postgresql.org/download/">PostgreSQL </a></li>
+  </ul>
+</details>
 
-<!-- Features -->
 
 ### Key Features <a name="key-features"></a>
 
-- **Keeps track of all your recipes, ingredients, and inventory**
-- **Allow you to save ingredients, keep track of what you have**
-- **App should allow you to make them public so anyone can access them**
+- **Keep track of what you have in your pantry, fridge, and freezer**
+- **Create your own recipes, add ingredients, and adjust servings**
+- **Make your recipes public to share them with other users**
+- **Generate shopping lists for any recipe or for all your recipes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
@@ -68,7 +72,7 @@ In order to run this project you need:
 
 Clone this repository by using the command line :
 
-- `git clone https://github.com/FuadNabi/recipe-app`
+- `git clone https://github.com/jorgegoco/recipe-app.git`
 
 ### Install
 
@@ -81,12 +85,12 @@ Install this project with:
 To run the project, execute the following commands:
 
 `rails db:create db:migrate db:seed`
+
 `rails server`
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
 
@@ -105,37 +109,35 @@ To run the project, execute the following commands:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- FUTURE FEATURES -->
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Add Inventory**
+- [ ] **Get alerts when any food is about to expire**
+- [ ] **Rate other users’ recipes**
+- [ ] **Export your shopping lists to your email or phone**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- CONTRIBUTING -->
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/FuadNabi/recipe-app/issues).
+Feel free to check the [issues page](https://github.com/jorgegoco/recipe-app/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- SUPPORT -->
 
 ## ⭐️ Show your support <a name="support"></a>
 
-If you like this project by staring it.
+If you like this project...give it a ⭐️!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-<!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Microverse for the project.
+I would like to thank [@microverse](https://www.microverse.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -143,4 +145,6 @@ I would like to thank Microverse for the project.
 
 ## 📝 License <a name="license"></a>
 
-This project is [MIT](https://github.com/FuadNabi/recipe-app/blob/test/LICENSE) licensed.
+This project is [MIT](./MIT.md) licensed.
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
