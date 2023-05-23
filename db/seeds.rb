@@ -12,6 +12,8 @@ egg = Food.create(name: 'Egg', measurement_unit: 'unit', price: 2, quantity: 10,
 butter = Food.create(name: 'Butter', measurement_unit: '250g', price: 4, quantity: 2, user_id: jorge.id)
 cheddar_cheese = Food.create(name: 'Cheddar Cheese', measurement_unit: '125g', price: 1.25, quantity: 2, user_id: jorge.id)
 cherry_tomatoes = Food.create(name: 'Cherry Tomatoes', measurement_unit: 'Kg', price: 30, quantity: 0.3, user_id: jorge.id)
+salmon = Food.create(name: 'Salmon', measurement_unit: 'Kg', price: 20, quantity: 0.5, user_id: jorge.id)
+lemon = Food.create(name: 'Lemon', measurement_unit: 'unit', price: 0.5, quantity: 2, user_id: jorge.id)
 
 # Creating foods for titina
 apple = Food.create(name: 'Apple', measurement_unit: 'unit', price: 0.3, quantity: 6, user_id: titina.id)
@@ -24,6 +26,11 @@ butter_titina = Food.create(name: 'Butter', measurement_unit: '250g', price: 4, 
 
 cheese_tomato_omelette_description = "To make this cheese and tomato omelet, you need to beat four eggs in a small bowl and season with salt and pepper. Heat some butter in a large nonstick skillet over medium-high heat and pour in the egg mixture. Cook for about 5 minutes, lifting the edges with a spatula to let the uncooked egg flow underneath. Sprinkle some shredded cheddar cheese and chopped cherry tomatoes over half of the omelet. Fold the other half over the filling and cook for another 5 minutes or until the cheese is melted. Cut into wedges and serve hot or cold."
 cheese_tomato_omelette = Recipe.create(name: 'Cheese and Tomato Omelet', preparation_time: '5 min', cooking_time: '10 min', description: cheese_tomato_omelette_description, public: true, user_id: jorge.id)
+
+salmon_with_lemon_description = "This recipe is a healthy and flavorful way to enjoy salmon. You only need four ingredients to make this baked salmon with lemon and dill. You can serve it with some rice or salad, or eat it on its own. To make this salmon, you need to preheat your oven to 375°F and line a baking sheet with parchment paper. Then, you need to rinse the salmon and pat it dry with paper towels. Next, you need to place the salmon on the prepared baking sheet and season with salt and pepper. After that, you need to top each fillet with two lemon slices and a sprig of dill. Finally, you need to bake the salmon for about 20 minutes or until it flakes easily with a fork. You need to discard the lemon slices and dill before serving and enjoy!"
+salmon_with_lemon = Recipe.create(name: 'Salmon with Lemon and Dill', preparation_time: '10 min', cooking_time: '20 min', description: salmon_with_lemon_description, public: true, user_id: jorge.id)
+
+
 
 # Creating recipes for titina
 
