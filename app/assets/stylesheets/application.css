@@ -352,15 +352,14 @@ th {
   tr {
     display: block;
   }
-  
+
   td {
     padding: 5px;
     border-bottom: 1px solid #ddd;
   }
-  
-  td:before {
+
+  td::before {
     content: attr(data-th);
     margin-top: 10px;
   }
 }
-
