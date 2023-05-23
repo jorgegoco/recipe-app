@@ -1,33 +1,23 @@
 class ShoppingListController < ApplicationController
   def index
-
-    @all_recipe_foods = []
+    @all_recipe_foods = all_recipe_foods
     @needed_recipe_foods = []
     @needed_recipe_foods_price = 0
 
     @user_foods = Food.where(user_id: current_user.id)
-    @user_recipes = Recipe.where(user_id: current_user.id)
-    @user_recipes.each do |user_recipe|
-      @recipe_foods = RecipeFood.where(recipe_id: user_recipe.id)
-      @recipe_foods.each do |recipe_food|
-        if @all_recipe_foods.find { |f| f.food_id == recipe_food.food_id }.nil?
-          @all_recipe_foods.push(recipe_food)
-        else
-          @all_recipe_foods.find { |f| f.food_id == recipe_food.food_id }.quantity += recipe_food.quantity
-        end
-      end
-    end
+
     @all_recipe_foods.each do |all_recipe_food|
       quantity_needed = all_recipe_food.quantity
       user_food_quantity = @user_foods.find { |f| f.id == all_recipe_food.food_id }.quantity
       value = user_food_quantity - quantity_needed
       next if value >= 0
+
       all_recipe_food.quantity = value * -1
       @needed_recipe_foods.push(all_recipe_food)
     end
     @needed_recipe_foods.each do |needed_recipe_food|
-        @needed_recipe_foods_price += needed_recipe_food.food.price * needed_recipe_food.quantity
-    end     
+      @needed_recipe_foods_price += needed_recipe_food.food.price * needed_recipe_food.quantity
+    end
   end
 
   def show
@@ -48,5 +38,23 @@ class ShoppingListController < ApplicationController
     @list_of_foods.each do |f|
       @total_price += f.food.price * f.quantity
     end
+  end
+
+  private
+
+  def all_recipe_foods
+    arr = []
+    user_recipes = Recipe.where(user_id: current_user.id)
+    user_recipes.each do |user_recipe|
+      user_recipe_foods = RecipeFood.where(recipe_id: user_recipe.id)
+      user_recipe_foods.each do |user_recipe_food|
+        if arr.find { |f| f.food_id == user_recipe_food.food_id }.nil?
+          arr.push(user_recipe_food)
+        else
+          arr.find { |f| f.food_id == user_recipe_food.food_id }.quantity += user_recipe_food.quantity
+        end
+      end
+    end
+    arr
   end
 end
