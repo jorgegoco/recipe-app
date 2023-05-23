@@ -1,32 +1,22 @@
 class ShoppingListController < ApplicationController
   def index
-    @food_amount = 0
-    @total_price = 0
-    @recipe_foods = []
-    @recepes = Recipe.where(user_id: current_user.id)
-    @need_foods = []
-    @recepes.each do |recipe|
-      @current_food = RecipeFood.where(recipe_id: recipe.id)
-      @current_food.each do |food|
-        @ingredient = @need_foods.find { |f| f.food_id == food.food_id }
-        if @ingredient.nil?
-          @need_foods.push(food)
-        else
-          @ingredient.quantity = @ingredient.quantity + food.quantity
-        end
-      end
-    end
-    @need_foods.each do |need_food|
-      new_food_id = need_food.food_id
-      new_val = Food.where(user: current_user).where(id: new_food_id).first.quantity
-      quantity_needed = new_val - need_food.quantity
-      next if quantity_needed >= 0
+    @all_recipe_foods = all_recipe_foods
+    @needed_recipe_foods = []
+    @needed_recipe_foods_price = 0
 
-      need_food.quantity = quantity_needed * -1
-      @recipe_foods << need_food
+    @user_foods = Food.where(user_id: current_user.id)
+
+    @all_recipe_foods.each do |all_recipe_food|
+      quantity_needed = all_recipe_food.quantity
+      user_food_quantity = @user_foods.find { |f| f.id == all_recipe_food.food_id }.quantity
+      value = user_food_quantity - quantity_needed
+      next if value >= 0
+
+      all_recipe_food.quantity = value * -1
+      @needed_recipe_foods.push(all_recipe_food)
     end
-    @recipe_foods.each do |f|
-      @total_price += f.food.price * f.quantity
+    @needed_recipe_foods.each do |needed_recipe_food|
+      @needed_recipe_foods_price += needed_recipe_food.food.price * needed_recipe_food.quantity
     end
   end
 
@@ -48,5 +38,23 @@ class ShoppingListController < ApplicationController
     @list_of_foods.each do |f|
       @total_price += f.food.price * f.quantity
     end
+  end
+
+  private
+
+  def all_recipe_foods
+    arr = []
+    user_recipes = Recipe.where(user_id: current_user.id)
+    user_recipes.each do |user_recipe|
+      user_recipe_foods = RecipeFood.where(recipe_id: user_recipe.id)
+      user_recipe_foods.each do |user_recipe_food|
+        if arr.find { |f| f.food_id == user_recipe_food.food_id }.nil?
+          arr.push(user_recipe_food)
+        else
+          arr.find { |f| f.food_id == user_recipe_food.food_id }.quantity += user_recipe_food.quantity
+        end
+      end
+    end
+    arr
   end
 end
