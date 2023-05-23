@@ -7,8 +7,9 @@
         <h1><%= link_to recipe.name, recipe, class: "recipe"%></h1>      
         <%= button_to "Remove", recipe, method: :delete, class: "hover home-inner" %>
       </div>
-      <div>
-        <p><%=recipe.description %></p>
+      <div class="public-recipe-data">
+        <p>Total food items: <span class="bold"><%= recipe.recipe_foods.length %></span></p>
+        <p>Total price: $<span class="bold"><%= recipe.total_price %></span></p>
       </div>
     </div>
   <% end %>
