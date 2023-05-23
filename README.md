@@ -25,7 +25,7 @@
 
 # 📖 Recipe App <a name="about-project"></a>
 
-> Recipe App is a web app that helps you manage your food inventory, create and share recipes, and plan your shopping lists. You can keep your recipes private, or make them public to inspire other users. You can also add ingredients to your recipes, and generate shopping lists for any recipe or for all your recipes. Recipe App is the ultimate tool for cooking enthusiasts who want to save time and money.👩‍🍳
+> Recipe App is a web app that helps you manage your food inventory, create and share recipes, and plan your shopping lists. You can keep your recipes private, or make them public to inspire other users. You can also add ingredients to your recipes, and generate shopping lists for any recipe or for all your recipes. Recipe App is the ultimate tool for cooking enthusiasts who want to save time and money! 👩‍🍳
 
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -51,22 +51,22 @@
 ### Key Features <a name="key-features"></a>
 
 - **Keep track of what you have in your pantry, fridge, and freezer**
-- **Create your own recipes, add ingredients, and adjust servings**
+- **Create your recipes, add ingredients, and adjust servings**
 - **Make your recipes public to share them with other users**
-- **Generate shopping lists for any recipe or for all your recipes**
+- **Generate shopping lists for any recipe or all your recipes**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running follow these simple example steps
 
 ### Prerequisites
 
-In order to run this project you need:
+To run this project you need:
 
-- Install ruby on rails on your computer or run in with docker
+- Ruby, Rails, and PostgreSQL installed in your terminal, or run in with docker
 
 ### Setup
 
