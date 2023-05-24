@@ -70,24 +70,32 @@ To run this project you need:
 
 ### Setup
 
-Clone this repository by using the command line :
+Clone this repository to your desired folder:
+```
+  git clone git@github.com:jorgegoco/recipe-app.git
 
-- `git clone https://github.com/jorgegoco/recipe-app.git`
+  cd blog_app_ror
+
+  bundle install
+```
 
 ### Install
 
 Install this project with:
 
-`bundle install`
+```
+  bundle install 
+```
 
 ### Usage
 
 To run the project, execute the following commands:
 
-`rails db:create db:migrate db:seed`
+```
+  rails db:create db:migrate db:seed
 
-`rails server`
-
+  rails server
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
