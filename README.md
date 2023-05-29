@@ -75,8 +75,6 @@ Clone this repository to your desired folder:
   git clone git@github.com:jorgegoco/recipe-app.git
 
   cd blog_app_ror
-
-  bundle install
 ```
 
 ### Install
